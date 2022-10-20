@@ -1,31 +1,6 @@
 SootopolisCity_Mart_MapScripts:: @ 815B21A
 	.byte 0
 
-SootopolisCity_Mart_EventScript_15B21B:: @ 815B21B
-	lock
-	faceplayer
-	message Text_HowMayIServeYou
-	waitmessage
-	pokemart SootopolisCity_Mart_Items
-	msgbox Text_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-SootopolisCity_Mart_Items:: @ 815B234
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFEND
-	.2byte ITEM_SHADOW_MAIL
-	.2byte ITEM_NONE
-	release
-	end
-
 SootopolisCity_Mart_EventScript_15B24A:: @ 815B24A
 	lock
 	faceplayer

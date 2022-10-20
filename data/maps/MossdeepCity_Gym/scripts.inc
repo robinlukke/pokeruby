@@ -58,6 +58,7 @@ MossdeepCity_Gym_EventScript_15A594:: @ 815A594
 	msgbox MossdeepCity_Gym_Text_18D128, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_MOSSDEEP_GYM
 	setflag FLAG_BADGE07_GET
+	addvar VAR_NUM_BADGES, 1
 	clearflag FLAG_HIDE_BRINEY_SLATEPORT_SHIPYARD
 	clearflag FLAG_UNKNOWN_393
 	setvar VAR_0x8008, 7

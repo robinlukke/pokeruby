@@ -21,29 +21,6 @@ EverGrandeCity_PokemonLeague_EventScript_15BA9A:: @ 815BA9A
 	release
 	end
 
-EverGrandeCity_PokemonLeague_EventScript_15BAA8:: @ 815BAA8
-	lock
-	faceplayer
-	message Text_HowMayIServeYou
-	waitmessage
-	pokemart EverGrandeCity_PokemonLeague_Items
-	msgbox Text_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-EverGrandeCity_PokemonLeague_Items:: @ 815BAC0
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
-	release
-	end
-
 EverGrandeCity_PokemonLeague_EventScript_15BAD2:: @ 815BAD2
 	lockall
 	goto_if_set FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_EventScript_15BB57

@@ -81,6 +81,7 @@ MauvilleCity_Gym_EventScript_1565DB:: @ 81565DB
 	msgbox MauvilleCity_Gym_Text_180DDA, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_MAUVILLE_GYM
 	setflag FLAG_BADGE03_GET
+	addvar VAR_NUM_BADGES, 1
 	addvar VAR_PETALBURG_GYM_STATE, 1
 	compare VAR_PETALBURG_GYM_STATE, 6
 	call_if_eq Common_EventScript_ReadyPetalburgGymForBattle

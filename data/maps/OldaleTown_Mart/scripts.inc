@@ -6,7 +6,7 @@ OldaleTown_Mart_EventScript_152F79:: @ 8152F79
 	faceplayer
 	message Text_HowMayIServeYou
 	waitmessage
-	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_152FA8
+	goto_if_set FLAG_ADVENTURE_STARTED, Common_EventScript_Mart_General
 	pokemart OldaleTown_Mart_Items1
 	msgbox Text_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -18,23 +18,8 @@ OldaleTown_Mart_Items1:: @ 8152F9C
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_NONE
-	release
-	end
-
-OldaleTown_Mart_EventScript_152FA8:: @ 8152FA8
-	pokemart OldaleTown_Mart_Items2
-	msgbox Text_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-OldaleTown_Mart_Items2:: @ 8152FB8
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_NONE
 	release
 	end

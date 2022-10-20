@@ -100,6 +100,7 @@ SootopolisCity_Gym_1F_EventScript_15B02D:: @ 815B02D
 	msgbox SootopolisCity_Gym_1F_Text_18F36B, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
 	setflag FLAG_BADGE08_GET
+	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
 	goto SootopolisCity_Gym_1F_EventScript_15B056

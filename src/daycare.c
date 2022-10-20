@@ -691,8 +691,9 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation)
     u8 language;
     u8 metLocation;
     u8 isEgg;
+	u32 personality;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, personality, FALSE, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
@@ -701,11 +702,11 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation)
     SetMonData(mon, MON_DATA_FRIENDSHIP, &gBaseStats[species].eggCycles);
     SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
     SetMonData(mon, MON_DATA_LANGUAGE, &language);
-    if (setMetLocation)
+    /* if (setMetLocation)
     {
-        metLocation = 253; // hot springs; see PokemonSummaryScreen_PrintEggTrainerMemo
+        metLocation = 253; // hot springs; see PokemonSummaryScreen_PrintEggTrainerMemo */
         SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
-    }
+    /* } */
 
     isEgg = TRUE;
     SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
@@ -752,10 +753,10 @@ static bool8 _ShouldEggHatch(struct DayCare *daycare)
         }
     }
 
-    if (daycare->misc.countersEtc.pendingEggPersonality == 0 && numParents == 2 && (daycare->misc.countersEtc.steps[1] % 256) == 255 && GetDaycareCompatibilityScore(daycare) > (u32)(Random() * 100) / 0xffff)
+    if (daycare->misc.countersEtc.pendingEggPersonality == 0 && numParents == 2 && (daycare->misc.countersEtc.steps[1] % 256) == 50 && GetDaycareCompatibilityScore(daycare) > (u32)(Random() * 100) / 0xffff)
         TriggerPendingDaycareEgg();
 
-    if (++daycare->misc.countersEtc.eggCycleStepsRemaining == 255)
+    if (++daycare->misc.countersEtc.eggCycleStepsRemaining == 10)
     {
         for (i = 0; i < gPlayerPartyCount; i++)
         {

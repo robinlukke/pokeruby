@@ -72,6 +72,7 @@ LavaridgeTown_Gym_1F_EventScript_153766:: @ 8153766
 	msgbox LavaridgeTown_Gym_1F_Text_176A8C, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
 	setflag FLAG_BADGE04_GET
+	addvar VAR_NUM_BADGES, 1
 	addvar VAR_PETALBURG_GYM_STATE, 1
 	compare VAR_PETALBURG_GYM_STATE, 6
 	call_if_eq Common_EventScript_ReadyPetalburgGymForBattle

@@ -9,30 +9,6 @@ FortreeCity_DecorationShop_EventScript_158261:: @ 8158261
 	msgbox FortreeCity_DecorationShop_Text_186AD6, MSGBOX_NPC
 	end
 
-FortreeCity_DecorationShop_EventScript_15826A:: @ 815826A
-	lock
-	faceplayer
-	message Text_HowMayIServeYou
-	waitmessage
-	pokemartdecoration FortreeCity_DecorationShop_Decorations1
-	msgbox Text_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-FortreeCity_DecorationShop_Decorations1:: @ 8158284
-	.2byte DECOR_SMALL_DESK
-	.2byte DECOR_POKEMON_DESK
-	.2byte DECOR_HEAVY_DESK
-	.2byte DECOR_RAGGED_DESK
-	.2byte DECOR_COMFORT_DESK
-	.2byte DECOR_BRICK_DESK
-	.2byte DECOR_CAMP_DESK
-	.2byte DECOR_HARD_DESK
-	.2byte DECOR_NONE
-	release
-	end
-
 FortreeCity_DecorationShop_EventScript_158298:: @ 8158298
 	lock
 	faceplayer

@@ -170,6 +170,8 @@
 #define VAR_STEVENS_HOUSE_STATE           0x40C6
 #define VAR_OLDALE_STATE                  0x40C7
 
+#define VAR_NUM_BADGES					  0x40C9
+
 #define VARS_END                          0x40FF
 
 #define SPECIAL_VARS_START 0x8000

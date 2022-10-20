@@ -649,16 +649,16 @@ u16 nature_stat_mod(u8 nature, u16 n, u8 statIndex)
 // Friendship deltas. Each event has 3 separate values, depending on the mon's
 // current friendship value. In general, a mon's friendship grows faster if
 // its current friendship is lower. The 3 tiers are 0-99, 100-199, and 200-255.
-static const s8 sFriendshipEventDeltas[][3] = {
-    { 5,  3,   2}, // FRIENDSHIP_EVENT_GROW_LEVEL
-    { 5,  3,   2}, // FRIENDSHIP_EVENT_VITAMIN
-    { 1,  1,   0}, // FRIENDSHIP_EVENT_BATTLE_ITEM
-    { 3,  2,   1}, // FRIENDSHIP_EVENT_LEAGUE_BATTLE
-    { 1,  1,   0}, // FRIENDSHIP_EVENT_LEARN_TMHM
-    { 1,  1,   1}, // FRIENDSHIP_EVENT_WALKING
-    {-1, -1,  -1}, // FRIENDSHIP_EVENT_FAINT_SMALL
-    {-5, -5, -10}, // FRIENDSHIP_EVENT_FAINT_OUTSIDE_BATTLE
-    {-5, -5, -10}, // FRIENDSHIP_EVENT_FAINT_LARGE
+static const s8 sFriendshipEventDeltas[][1] = {
+    { 5 }, // FRIENDSHIP_EVENT_GROW_LEVEL
+    { 5 }, // FRIENDSHIP_EVENT_VITAMIN
+    { 1 }, // FRIENDSHIP_EVENT_BATTLE_ITEM
+    { 3 }, // FRIENDSHIP_EVENT_LEAGUE_BATTLE
+    { 1 }, // FRIENDSHIP_EVENT_LEARN_TMHM
+    { 1 }, // FRIENDSHIP_EVENT_WALKING
+    { -1 }, // FRIENDSHIP_EVENT_FAINT_SMALL
+    { -10 }, // FRIENDSHIP_EVENT_FAINT_OUTSIDE_BATTLE
+    { -10 }, // FRIENDSHIP_EVENT_FAINT_LARGE
 };
 
 void AdjustFriendship(struct Pokemon *mon, u8 event)
@@ -785,14 +785,14 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         }
 
         if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
-            evIncrease *= 2;
+            evIncrease *= 10;
 
         if (totalEVs + (s16)evIncrease > MAX_TOTAL_EVS)
             evIncrease = ((s16)evIncrease + MAX_TOTAL_EVS) - (totalEVs + evIncrease);
 
-        if (evs[i] + (s16)evIncrease > 255)
+        if (evs[i] + (s16)evIncrease > 252)
         {
-            int val1 = (s16)evIncrease + 255;
+            int val1 = (s16)evIncrease + 252;
             int val2 = evs[i] + evIncrease;
             evIncrease = val1 - val2;
         }
